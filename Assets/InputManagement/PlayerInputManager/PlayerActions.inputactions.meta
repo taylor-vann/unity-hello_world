@@ -1,0 +1,40 @@
+fileFormatVersion: 2
+guid: 30ec947facdf24f4cbb88d9b14693955
+ScriptedImporter:
+  fileIDToRecycleName:
+    11400000: <root>
+    11400002: Gameplay/GameplayCrouch
+    11400004: Gameplay/GameplayTarget
+    11400012: Gameplay/GameplayCrouchRelease
+    11400014: Gameplay/GameplayRotation
+    11400016: Menu/MenuTraverse
+    11400018: Gameplay/GameplayMoveCamera
+    11400022: Menu/MenuTraverseRelease
+    11400024: Gameplay/GameplayJump
+    11400026: Gameplay/GameplayJumpRelease
+    11400028: Gameplay/GameplayShortAttack
+    11400030: Gameplay/GameplayLongAttack
+    11400032: Menu/MenuConfirm
+    11400034: Menu/MenuEscape
+    11400036: Gameplay/GameplayMove
+    11400046: Gameplay/GameplayMoveRelease
+    11400048: Gameplay/GameplayMenu
+    11400050: Gameplay/GameplayPause
+    11400052: GameplayMenu/GameMenuTraverse
+    11400054: GameplayMenu/GameMenuTraverseRelease
+    11400056: GameplayMenu/GameMenuConfirm
+    11400058: GameplayMenu/GameMenuEscape
+    11400060: GameplayMenu/GameMenuExit
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: e2fdc6edf8744b38b702a2a5ee3541b2, type: 3}
+  generateWrapperCode: 1
+  wrapperCodePath: 
+  wrapperClassName: 
+  wrapperCodeNamespace: 
+  generateActionEvents: 0
+  generateInterfaces: 0
+  actionGuids: []
+  actionMapGuids: []
