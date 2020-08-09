@@ -3,26 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Input.Plugins.PlayerInput;
 
+using PlayerInputStore;
+
 public class PlayerInputManagerHooks : MonoBehaviour
 {
+    public PlayerActionsStore playerActionsStore;
+
     private void Awake()
     {
-        // Instance should survive Scenes and Loading
+        // Persist PlayerInputManager && PlayerInputManagerHooks between scenes
         DontDestroyOnLoad(this);
-    }
 
-    public void Ping(uint userId)
-    {
-        Debug.Log("User " + userId + "is read to play!");
+        // create store
+        this.playerActionsStore = new PlayerActionsStore();
     }
 
     void OnPlayerJoined(PlayerInput playerInput)
     {
-
+        // register with player playerActionsStore
     }
 
     void OnPlayerLeft(PlayerInput playerInput)
     {
-
+        // unregister with player playerActionsStore
     }
 }
