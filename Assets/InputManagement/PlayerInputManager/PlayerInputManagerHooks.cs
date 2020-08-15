@@ -11,10 +11,10 @@ public class PlayerInputManagerHooks : MonoBehaviour
 
     private void Awake()
     {
-        this.store = new Store();
-
         // Persist PlayerInputManager && PlayerInputManagerHooks between scenes
         DontDestroyOnLoad(this);
+
+        this.store = new Store();
     }
 
     // Base
@@ -40,6 +40,7 @@ public class PlayerInputManagerHooks : MonoBehaviour
             -1,
             isFocused
         );
+
         this.store.SendAction(action);
     }
 
@@ -52,6 +53,7 @@ public class PlayerInputManagerHooks : MonoBehaviour
             playerInput.user.id,
             playerInput
         );
+
         this.store.SendAction(action);
     }
 
@@ -62,6 +64,7 @@ public class PlayerInputManagerHooks : MonoBehaviour
             playerInput.user.id,
             playerInput
         );
+
         this.store.SendAction(action);
     }
 }
