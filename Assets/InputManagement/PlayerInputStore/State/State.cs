@@ -1,5 +1,12 @@
 ﻿namespace PlayerInputStore
 {
+    // bunch of composers
+
+    // playerInputComposer
+    // --> references to 
+
+    // playerActionComposer
+
     // list of PlayerInputs
 
     // store {
@@ -13,4 +20,9 @@
     //   }
     //   ...
     // }
+
+    namespace State
+    {
+
+    }
 }

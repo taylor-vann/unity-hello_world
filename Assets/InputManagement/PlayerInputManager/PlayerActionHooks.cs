@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Experimental.Input.Plugins.PlayerInput;
 
+using GameActions;
 using PlayerInputStore;
 using PlayerInputStore.Actions;
 

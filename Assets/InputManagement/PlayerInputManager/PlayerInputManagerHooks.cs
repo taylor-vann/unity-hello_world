@@ -3,6 +3,7 @@ using UnityEngine.Experimental.Input.Plugins.PlayerInput;
 
 using PlayerInputStore;
 using PlayerInputStore.Actions;
+using GameActions;
 
 public class PlayerInputManagerHooks : MonoBehaviour
 {
