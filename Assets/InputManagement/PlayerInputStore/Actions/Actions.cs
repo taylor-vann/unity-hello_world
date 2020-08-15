@@ -20,12 +20,12 @@ namespace PlayerInputStore
 
         public class Action<T>
         {
-            public readonly string title;
+            public readonly string flag;
             public readonly ActionParams<T> parameters;
 
-            public Action(string title, double playerId, T value)
+            public Action(string flag, double playerId, T value)
             {
-                this.title = title;
+                this.flag = flag;
                 this.parameters = new ActionParams<T>(playerId, value);
             }
         }

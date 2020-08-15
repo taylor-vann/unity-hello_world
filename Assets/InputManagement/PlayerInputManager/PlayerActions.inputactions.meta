@@ -3,23 +3,23 @@ guid: 30ec947facdf24f4cbb88d9b14693955
 ScriptedImporter:
   fileIDToRecycleName:
     11400000: <root>
-    11400002: Gameplay/GameplayCameraMove
-    11400004: Gameplay/GameplayCameraMoveRelease
+    11400002: PlayMenu/PlayMenuTraverse
+    11400004: PlayMenu/PlayMenuTraverseRelease
+    11400006: PlayMenu/PlayMenuTransitionToGame
+    11400010: Play/PlayTransitionToPlayMenu
     11400016: Menu/MenuTraverse
     11400022: Menu/MenuTraverseRelease
-    11400024: Gameplay/GameplayJump
-    11400026: Gameplay/GameplayJumpRelease
+    11400024: PlayMenu/PlayMenuConfirm
+    11400026: PlayMenu/PlayMenuEscape
     11400032: Menu/MenuConfirm
     11400034: Menu/MenuEscape
-    11400036: Gameplay/GameplayMove
-    11400046: Gameplay/GameplayMoveRelease
-    11400048: Gameplay/GameplayMenu
-    11400050: Gameplay/GameplayPause
-    11400052: GameplayMenu/GameMenuTraverse
-    11400054: GameplayMenu/GameMenuTraverseRelease
-    11400056: GameplayMenu/GameMenuConfirm
-    11400058: GameplayMenu/GameMenuEscape
-    11400060: GameplayMenu/GameMenuExit
+    11400046: Play/PlayMove
+    11400048: Play/PlayMoveRelease
+    11400050: Play/PlayJump
+    11400052: Play/PlayJumpRelease
+    11400054: Play/PlayCameraMove
+    11400056: Play/PlayCameraMoveRelease
+    11400060: Play/PlayPause
   externalObjects: {}
   userData: 
   assetBundleName: 

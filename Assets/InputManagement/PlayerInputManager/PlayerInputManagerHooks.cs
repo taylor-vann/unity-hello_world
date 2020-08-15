@@ -17,10 +17,38 @@ public class PlayerInputManagerHooks : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
+    // Base
+
+    void OnApplicationFocus(bool isFocused)
+    {
+        Action<bool> action;
+
+        if (isFocused)
+        {
+            action = new Action<bool>(
+                ActionFlags.ApplicationGainedFocus,
+                -1,
+                isFocused
+            );
+
+            this.store.SendAction(action);
+            return;
+        }
+
+        action = new Action<bool>(
+            ActionFlags.ApplicationLostFocus,
+            -1,
+            isFocused
+        );
+        this.store.SendAction(action);
+    }
+
+    // Players
+
     void OnPlayerJoined(PlayerInput playerInput)
     {
         Action<PlayerInput> action = new Action<PlayerInput>(
-            "PLAYER_JOINED_GAME",
+            ActionFlags.PlayerJoined,
             playerInput.user.id,
             playerInput
         );
@@ -30,30 +58,10 @@ public class PlayerInputManagerHooks : MonoBehaviour
     void OnPlayerLeft(PlayerInput playerInput)
     {
         Action<PlayerInput> action = new Action<PlayerInput>(
-            "PLAYER_LEFT_GAME",
+            ActionFlags.PlayerLeft,
             playerInput.user.id,
             playerInput
         );
-        this.store.SendAction(action);
-    }
-
-    void OnApplicationFocus(bool isFocused)
-    {
-        Action<bool> action = new Action<bool>(
-            "APPLICATION_BLUR",
-            -1,
-            isFocused
-        );
-
-        if (isFocused)
-        {
-            action = new Action<bool>(
-                "APPLICATION_FOCUS",
-                -1,
-                isFocused
-            );
-        }
-
         this.store.SendAction(action);
     }
 }

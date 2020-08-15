@@ -5,7 +5,6 @@ using PlayerInputStore;
 using PlayerInputStore.Actions;
 
 
-
 public class PlayerActionHooks : MonoBehaviour
 {
 
@@ -15,19 +14,21 @@ public class PlayerActionHooks : MonoBehaviour
 
     void Awake()
     {
+        // Persist PlayerInput && PlayerActionHooks between scenes
+        DontDestroyOnLoad(this);
+
         this.actionsStore = PlayerInputManager
             .instance.GetComponent<PlayerInputManagerHooks>()
             .store;
         this.userId = this.GetComponent<PlayerInput>().user.id;
-
-        // Persist PlayerInput && PlayerActionHooks between scenes
-        DontDestroyOnLoad(this);
     }
+
+    // Players
 
     void OnDeviceLost(PlayerInput playerInput)
     {
         Action<PlayerInput> action = new Action<PlayerInput>(
-            "PLAYER_DEVICE_LOST",
+            ActionFlags.DeviceLost,
             this.userId,
             playerInput
         );
@@ -38,7 +39,7 @@ public class PlayerActionHooks : MonoBehaviour
     void OnDeviceRegained(PlayerInput playerInput)
     {
         Action<PlayerInput> action = new Action<PlayerInput>(
-            "PLAYER_DEVICE_REGAINED",
+            ActionFlags.DeviceRegained,
             this.userId,
             playerInput
         );
@@ -46,10 +47,12 @@ public class PlayerActionHooks : MonoBehaviour
         this.actionsStore.SendAction(action);
     }
 
-    void OnGameplayJump(InputValue inputValue)
+    // Menu
+
+    void OnMenuTraverse(InputValue inputValue)
     {
         Action<InputValue> action = new Action<InputValue>(
-            "GAMEPLAY_JUMP",
+            ActionFlags.MenuTraverse,
             this.userId,
             inputValue
         );
@@ -57,10 +60,10 @@ public class PlayerActionHooks : MonoBehaviour
         this.actionsStore.SendAction(action);
     }
 
-    void OnGameplayJumpRelease(InputValue inputValue)
+    void OnMenuTraverseRelease(InputValue inputValue)
     {
         Action<InputValue> action = new Action<InputValue>(
-            "GAMEPLAY_JUMP_RELEASE",
+            ActionFlags.MenuTraverseRelease,
             this.userId,
             inputValue
         );
@@ -68,10 +71,10 @@ public class PlayerActionHooks : MonoBehaviour
         this.actionsStore.SendAction(action);
     }
 
-    void OnGameplayMove(InputValue inputValue)
+    void OnMenuConfirm(InputValue inputValue)
     {
         Action<InputValue> action = new Action<InputValue>(
-            "GAMEPLAY_MOVE",
+            ActionFlags.MenuConfirm,
             this.userId,
             inputValue
         );
@@ -79,10 +82,10 @@ public class PlayerActionHooks : MonoBehaviour
         this.actionsStore.SendAction(action);
     }
 
-    void OnGameplayMoveRelease(InputValue inputValue)
+    void OnMenuEscape(InputValue inputValue)
     {
         Action<InputValue> action = new Action<InputValue>(
-            "GAMEPLAY_MOVE_RELEASE",
+            ActionFlags.MenuEscape,
             this.userId,
             inputValue
         );
@@ -90,10 +93,12 @@ public class PlayerActionHooks : MonoBehaviour
         this.actionsStore.SendAction(action);
     }
 
-    void OnGameplayCameraMove(InputValue inputValue)
+    // PlayMenu
+
+    void OnPlayMenuTraverse(InputValue inputValue)
     {
         Action<InputValue> action = new Action<InputValue>(
-            "GAMEPLAY_CAMERA_MOVE",
+            ActionFlags.PlayMenuTraverse,
             this.userId,
             inputValue
         );
@@ -101,10 +106,133 @@ public class PlayerActionHooks : MonoBehaviour
         this.actionsStore.SendAction(action);
     }
 
-    void OnGameplayCameraMoveRelease(InputValue inputValue)
+    void OnPlayMenuTraverseRelease(InputValue inputValue)
     {
         Action<InputValue> action = new Action<InputValue>(
-            "GAMEPLAY_CAMERA_MOVE_RELEASE",
+            ActionFlags.PlayMenuTraverseRelease,
+            this.userId,
+            inputValue
+        );
+
+        this.actionsStore.SendAction(action);
+    }
+
+    void OnPlayMenuConfirm(InputValue inputValue)
+    {
+        Action<InputValue> action = new Action<InputValue>(
+            ActionFlags.PlayMenuConfirm,
+            this.userId,
+            inputValue
+        );
+
+        this.actionsStore.SendAction(action);
+    }
+
+    void OnPlayMenuEscape(InputValue inputValue)
+    {
+        Action<InputValue> action = new Action<InputValue>(
+            ActionFlags.PlayMenuEscape,
+            this.userId,
+            inputValue
+        );
+
+        this.actionsStore.SendAction(action);
+    }
+
+    void OnPlayMenuTransitionToGame(InputValue inputValue)
+    {
+        Action<InputValue> action = new Action<InputValue>(
+            ActionFlags.PlayMenuTransitionToGame,
+            this.userId,
+            inputValue
+        );
+
+        this.actionsStore.SendAction(action);
+    }
+
+    // Play
+
+    void OnPlayMove(InputValue inputValue)
+    {
+        Action<InputValue> action = new Action<InputValue>(
+            ActionFlags.PlayMove,
+            this.userId,
+            inputValue
+        );
+
+        this.actionsStore.SendAction(action);
+    }
+
+    void OnPlayMoveRelease(InputValue inputValue)
+    {
+        Action<InputValue> action = new Action<InputValue>(
+            ActionFlags.PlayMoveRelease,
+            this.userId,
+            inputValue
+        );
+
+        this.actionsStore.SendAction(action);
+    }
+
+    void OnPlayCameraMove(InputValue inputValue)
+    {
+        Action<InputValue> action = new Action<InputValue>(
+            ActionFlags.PlayCameraMove,
+            this.userId,
+            inputValue
+        );
+
+        this.actionsStore.SendAction(action);
+    }
+
+    void OnPlayCameraMoveRelease(InputValue inputValue)
+    {
+        Action<InputValue> action = new Action<InputValue>(
+            ActionFlags.PlayCameraMoveRelease,
+            this.userId,
+            inputValue
+        );
+
+        this.actionsStore.SendAction(action);
+    }
+
+    void OnPlayPause(InputValue inputValue)
+    {
+        Action<InputValue> action = new Action<InputValue>(
+            ActionFlags.PlayPause,
+            this.userId,
+            inputValue
+        );
+
+        this.actionsStore.SendAction(action);
+    }
+
+    void OnPlayJump(InputValue inputValue)
+    {
+        Action<InputValue> action = new Action<InputValue>(
+            ActionFlags.PlayJump,
+            this.userId,
+            inputValue
+        );
+
+        this.actionsStore.SendAction(action);
+    }
+
+    void OnPlayJumpRelease(InputValue inputValue)
+    {
+        Action<InputValue> action = new Action<InputValue>(
+            ActionFlags.PlayJumpRelease,
+            this.userId,
+            inputValue
+        );
+
+        this.actionsStore.SendAction(action);
+    }
+
+    void OnPlayTransitionToPlayMenu(InputValue inputValue)
+    {
+        Action<InputValue> action = new Action<InputValue>(
+            ActionFlags.PlayTransitionToPlayMenu,
             this.userId,
             inputValue
         );

@@ -21,7 +21,7 @@ namespace PlayerInputStore
 
         public void SendAction<T>(Action<T> action)
         {
-            Debug.Log(action.title);
+            Debug.Log(action.flag);
         }
     }
 }
