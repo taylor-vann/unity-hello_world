@@ -9,7 +9,7 @@ using PlayerInputStore.Actions;
 public class PlayerActionHooks : MonoBehaviour
 {
 
-    private Store actionsStore;
+    private Store store;
     private uint userId;
 
 
@@ -18,7 +18,7 @@ public class PlayerActionHooks : MonoBehaviour
         // Persist PlayerInput && PlayerActionHooks between scenes
         DontDestroyOnLoad(this);
 
-        this.actionsStore = PlayerInputManager
+        this.store = PlayerInputManager
             .instance.GetComponent<PlayerInputManagerHooks>()
             .store;
         this.userId = this.GetComponent<PlayerInput>().user.id;
@@ -34,7 +34,7 @@ public class PlayerActionHooks : MonoBehaviour
             playerInput
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     void OnDeviceRegained(PlayerInput playerInput)
@@ -45,7 +45,7 @@ public class PlayerActionHooks : MonoBehaviour
             playerInput
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     // Menu
@@ -58,7 +58,7 @@ public class PlayerActionHooks : MonoBehaviour
             inputValue
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     void OnMenuTraverseRelease(InputValue inputValue)
@@ -69,7 +69,7 @@ public class PlayerActionHooks : MonoBehaviour
             inputValue
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     void OnMenuConfirm(InputValue inputValue)
@@ -80,7 +80,7 @@ public class PlayerActionHooks : MonoBehaviour
             inputValue
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     void OnMenuEscape(InputValue inputValue)
@@ -91,7 +91,7 @@ public class PlayerActionHooks : MonoBehaviour
             inputValue
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     // PlayMenu
@@ -104,7 +104,7 @@ public class PlayerActionHooks : MonoBehaviour
             inputValue
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     void OnPlayMenuTraverseRelease(InputValue inputValue)
@@ -115,7 +115,7 @@ public class PlayerActionHooks : MonoBehaviour
             inputValue
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     void OnPlayMenuConfirm(InputValue inputValue)
@@ -126,7 +126,7 @@ public class PlayerActionHooks : MonoBehaviour
             inputValue
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     void OnPlayMenuEscape(InputValue inputValue)
@@ -137,7 +137,7 @@ public class PlayerActionHooks : MonoBehaviour
             inputValue
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     void OnPlayMenuTransitionToGame(InputValue inputValue)
@@ -148,7 +148,7 @@ public class PlayerActionHooks : MonoBehaviour
             inputValue
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     // Play
@@ -161,7 +161,7 @@ public class PlayerActionHooks : MonoBehaviour
             inputValue
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     void OnPlayMoveRelease(InputValue inputValue)
@@ -172,7 +172,7 @@ public class PlayerActionHooks : MonoBehaviour
             inputValue
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     void OnPlayCameraMove(InputValue inputValue)
@@ -183,7 +183,7 @@ public class PlayerActionHooks : MonoBehaviour
             inputValue
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     void OnPlayCameraMoveRelease(InputValue inputValue)
@@ -194,7 +194,7 @@ public class PlayerActionHooks : MonoBehaviour
             inputValue
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     void OnPlayPause(InputValue inputValue)
@@ -205,7 +205,7 @@ public class PlayerActionHooks : MonoBehaviour
             inputValue
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     void OnPlayJump(InputValue inputValue)
@@ -216,7 +216,7 @@ public class PlayerActionHooks : MonoBehaviour
             inputValue
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     void OnPlayJumpRelease(InputValue inputValue)
@@ -227,7 +227,7 @@ public class PlayerActionHooks : MonoBehaviour
             inputValue
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 
     void OnPlayTransitionToPlayMenu(InputValue inputValue)
@@ -238,6 +238,6 @@ public class PlayerActionHooks : MonoBehaviour
             inputValue
         );
 
-        this.actionsStore.SendAction(action);
+        this.store.SendAction(action);
     }
 }
