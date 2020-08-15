@@ -22,17 +22,12 @@ public class PlayerActions : InputActionAssetReference
         m_Gameplay = asset.GetActionMap("Gameplay");
         m_Gameplay_GameplayJump = m_Gameplay.GetAction("GameplayJump");
         m_Gameplay_GameplayJumpRelease = m_Gameplay.GetAction("GameplayJumpRelease");
-        m_Gameplay_GameplayShortAttack = m_Gameplay.GetAction("GameplayShortAttack");
-        m_Gameplay_GameplayLongAttack = m_Gameplay.GetAction("GameplayLongAttack");
-        m_Gameplay_GameplayCrouch = m_Gameplay.GetAction("GameplayCrouch");
-        m_Gameplay_GameplayCrouchRelease = m_Gameplay.GetAction("GameplayCrouchRelease");
-        m_Gameplay_GameplayTarget = m_Gameplay.GetAction("GameplayTarget");
-        m_Gameplay_GameplayMoveCamera = m_Gameplay.GetAction("GameplayMoveCamera");
         m_Gameplay_GameplayMove = m_Gameplay.GetAction("GameplayMove");
         m_Gameplay_GameplayMoveRelease = m_Gameplay.GetAction("GameplayMoveRelease");
+        m_Gameplay_GameplayCameraMove = m_Gameplay.GetAction("GameplayCameraMove");
+        m_Gameplay_GameplayCameraMoveRelease = m_Gameplay.GetAction("GameplayCameraMoveRelease");
         m_Gameplay_GameplayMenu = m_Gameplay.GetAction("GameplayMenu");
         m_Gameplay_GameplayPause = m_Gameplay.GetAction("GameplayPause");
-        m_Gameplay_GameplayRotation = m_Gameplay.GetAction("GameplayRotation");
         // GameplayMenu
         m_GameplayMenu = asset.GetActionMap("GameplayMenu");
         m_GameplayMenu_GameMenuTraverse = m_GameplayMenu.GetAction("GameMenuTraverse");
@@ -53,17 +48,12 @@ public class PlayerActions : InputActionAssetReference
         m_Gameplay = null;
         m_Gameplay_GameplayJump = null;
         m_Gameplay_GameplayJumpRelease = null;
-        m_Gameplay_GameplayShortAttack = null;
-        m_Gameplay_GameplayLongAttack = null;
-        m_Gameplay_GameplayCrouch = null;
-        m_Gameplay_GameplayCrouchRelease = null;
-        m_Gameplay_GameplayTarget = null;
-        m_Gameplay_GameplayMoveCamera = null;
         m_Gameplay_GameplayMove = null;
         m_Gameplay_GameplayMoveRelease = null;
+        m_Gameplay_GameplayCameraMove = null;
+        m_Gameplay_GameplayCameraMoveRelease = null;
         m_Gameplay_GameplayMenu = null;
         m_Gameplay_GameplayPause = null;
-        m_Gameplay_GameplayRotation = null;
         m_GameplayMenu = null;
         m_GameplayMenu_GameMenuTraverse = null;
         m_GameplayMenu_GameMenuTraverseRelease = null;
@@ -91,34 +81,24 @@ public class PlayerActions : InputActionAssetReference
     private InputActionMap m_Gameplay;
     private InputAction m_Gameplay_GameplayJump;
     private InputAction m_Gameplay_GameplayJumpRelease;
-    private InputAction m_Gameplay_GameplayShortAttack;
-    private InputAction m_Gameplay_GameplayLongAttack;
-    private InputAction m_Gameplay_GameplayCrouch;
-    private InputAction m_Gameplay_GameplayCrouchRelease;
-    private InputAction m_Gameplay_GameplayTarget;
-    private InputAction m_Gameplay_GameplayMoveCamera;
     private InputAction m_Gameplay_GameplayMove;
     private InputAction m_Gameplay_GameplayMoveRelease;
+    private InputAction m_Gameplay_GameplayCameraMove;
+    private InputAction m_Gameplay_GameplayCameraMoveRelease;
     private InputAction m_Gameplay_GameplayMenu;
     private InputAction m_Gameplay_GameplayPause;
-    private InputAction m_Gameplay_GameplayRotation;
     public struct GameplayActions
     {
         private PlayerActions m_Wrapper;
         public GameplayActions(PlayerActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @GameplayJump { get { return m_Wrapper.m_Gameplay_GameplayJump; } }
         public InputAction @GameplayJumpRelease { get { return m_Wrapper.m_Gameplay_GameplayJumpRelease; } }
-        public InputAction @GameplayShortAttack { get { return m_Wrapper.m_Gameplay_GameplayShortAttack; } }
-        public InputAction @GameplayLongAttack { get { return m_Wrapper.m_Gameplay_GameplayLongAttack; } }
-        public InputAction @GameplayCrouch { get { return m_Wrapper.m_Gameplay_GameplayCrouch; } }
-        public InputAction @GameplayCrouchRelease { get { return m_Wrapper.m_Gameplay_GameplayCrouchRelease; } }
-        public InputAction @GameplayTarget { get { return m_Wrapper.m_Gameplay_GameplayTarget; } }
-        public InputAction @GameplayMoveCamera { get { return m_Wrapper.m_Gameplay_GameplayMoveCamera; } }
         public InputAction @GameplayMove { get { return m_Wrapper.m_Gameplay_GameplayMove; } }
         public InputAction @GameplayMoveRelease { get { return m_Wrapper.m_Gameplay_GameplayMoveRelease; } }
+        public InputAction @GameplayCameraMove { get { return m_Wrapper.m_Gameplay_GameplayCameraMove; } }
+        public InputAction @GameplayCameraMoveRelease { get { return m_Wrapper.m_Gameplay_GameplayCameraMoveRelease; } }
         public InputAction @GameplayMenu { get { return m_Wrapper.m_Gameplay_GameplayMenu; } }
         public InputAction @GameplayPause { get { return m_Wrapper.m_Gameplay_GameplayPause; } }
-        public InputAction @GameplayRotation { get { return m_Wrapper.m_Gameplay_GameplayRotation; } }
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }

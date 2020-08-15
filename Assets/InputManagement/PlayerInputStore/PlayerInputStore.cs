@@ -1,8 +1,11 @@
-﻿namespace PlayerInputStore
+﻿using UnityEngine;
+using PlayerInputStore.Actions;
+
+namespace PlayerInputStore
 {
 
     // dispatch actions
-    public class PlayerActionsStore
+    public class Store
     {
         // responsibilities:
         //   - set default state of player controllers
@@ -15,5 +18,10 @@
         //
         // sendAction();
         // getStoreState();
+
+        public void SendAction<T>(Action<T> action)
+        {
+            Debug.Log(action.title);
+        }
     }
 }

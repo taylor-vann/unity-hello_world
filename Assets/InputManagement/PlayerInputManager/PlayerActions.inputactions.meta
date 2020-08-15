@@ -3,17 +3,12 @@ guid: 30ec947facdf24f4cbb88d9b14693955
 ScriptedImporter:
   fileIDToRecycleName:
     11400000: <root>
-    11400002: Gameplay/GameplayCrouch
-    11400004: Gameplay/GameplayTarget
-    11400012: Gameplay/GameplayCrouchRelease
-    11400014: Gameplay/GameplayRotation
+    11400002: Gameplay/GameplayCameraMove
+    11400004: Gameplay/GameplayCameraMoveRelease
     11400016: Menu/MenuTraverse
-    11400018: Gameplay/GameplayMoveCamera
     11400022: Menu/MenuTraverseRelease
     11400024: Gameplay/GameplayJump
     11400026: Gameplay/GameplayJumpRelease
-    11400028: Gameplay/GameplayShortAttack
-    11400030: Gameplay/GameplayLongAttack
     11400032: Menu/MenuConfirm
     11400034: Menu/MenuEscape
     11400036: Gameplay/GameplayMove

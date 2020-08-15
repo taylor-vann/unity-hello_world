@@ -26,66 +26,6 @@
                     "bindings": []
                 },
                 {
-                    "name": "GameplayShortAttack",
-                    "id": "b844b76c-3228-4117-817c-dd57ef2b8b75",
-                    "expectedControlLayout": "Button",
-                    "continuous": false,
-                    "passThrough": false,
-                    "processors": "",
-                    "interactions": "Press",
-                    "bindings": []
-                },
-                {
-                    "name": "GameplayLongAttack",
-                    "id": "36bd4f8b-b3df-4cf9-b954-c54e0ecf575f",
-                    "expectedControlLayout": "",
-                    "continuous": false,
-                    "passThrough": false,
-                    "processors": "",
-                    "interactions": "Press",
-                    "bindings": []
-                },
-                {
-                    "name": "GameplayCrouch",
-                    "id": "75bd9997-37f3-4bf0-b417-c78f012fe070",
-                    "expectedControlLayout": "Button",
-                    "continuous": false,
-                    "passThrough": false,
-                    "processors": "",
-                    "interactions": "Press",
-                    "bindings": []
-                },
-                {
-                    "name": "GameplayCrouchRelease",
-                    "id": "c150cdff-d89e-4013-a26c-af9c3b514519",
-                    "expectedControlLayout": "Button",
-                    "continuous": false,
-                    "passThrough": false,
-                    "processors": "",
-                    "interactions": "Press(behavior=1)",
-                    "bindings": []
-                },
-                {
-                    "name": "GameplayTarget",
-                    "id": "5da90cd2-251e-4076-8eaf-343218aef253",
-                    "expectedControlLayout": "Button",
-                    "continuous": false,
-                    "passThrough": false,
-                    "processors": "",
-                    "interactions": "Press",
-                    "bindings": []
-                },
-                {
-                    "name": "GameplayMoveCamera",
-                    "id": "8ac8966e-afa2-45bc-8bf9-f0993c4e7b4b",
-                    "expectedControlLayout": "Stick",
-                    "continuous": true,
-                    "passThrough": false,
-                    "processors": "",
-                    "interactions": "Press(behavior=1)",
-                    "bindings": []
-                },
-                {
                     "name": "GameplayMove",
                     "id": "57adba3e-70a1-4c7f-a4ad-efca919e8b9e",
                     "expectedControlLayout": "Stick",
@@ -98,6 +38,26 @@
                 {
                     "name": "GameplayMoveRelease",
                     "id": "676332d8-1a63-4122-8bb5-463c14018803",
+                    "expectedControlLayout": "Stick",
+                    "continuous": false,
+                    "passThrough": false,
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
+                    "bindings": []
+                },
+                {
+                    "name": "GameplayCameraMove",
+                    "id": "8ac8966e-afa2-45bc-8bf9-f0993c4e7b4b",
+                    "expectedControlLayout": "Stick",
+                    "continuous": true,
+                    "passThrough": false,
+                    "processors": "",
+                    "interactions": "Press",
+                    "bindings": []
+                },
+                {
+                    "name": "GameplayCameraMoveRelease",
+                    "id": "2e5ec390-0f57-4fb5-bbc8-e84140c29c3e",
                     "expectedControlLayout": "Stick",
                     "continuous": false,
                     "passThrough": false,
@@ -124,16 +84,6 @@
                     "processors": "",
                     "interactions": "Press",
                     "bindings": []
-                },
-                {
-                    "name": "GameplayRotation",
-                    "id": "2e5ec390-0f57-4fb5-bbc8-e84140c29c3e",
-                    "expectedControlLayout": "",
-                    "continuous": true,
-                    "passThrough": false,
-                    "processors": "",
-                    "interactions": "Press",
-                    "bindings": []
                 }
             ],
             "bindings": [
@@ -152,18 +102,6 @@
                 {
                     "name": "",
                     "path": "<Keyboard>/k",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard",
-                    "action": "GameplayJump",
-                    "chainWithPrevious": false,
-                    "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
-                },
-                {
-                    "name": "",
-                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
@@ -260,18 +198,6 @@
                 {
                     "name": "",
                     "path": "<Keyboard>/k",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard",
-                    "action": "GameplayJumpRelease",
-                    "chainWithPrevious": false,
-                    "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
-                },
-                {
-                    "name": "",
-                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
@@ -403,11 +329,11 @@
                 },
                 {
                     "name": "",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "GameplayShortAttack",
+                    "groups": ";Controller",
+                    "action": "GameplayCameraMove",
                     "chainWithPrevious": false,
                     "isComposite": false,
                     "isPartOfComposite": false,
@@ -415,71 +341,11 @@
                 },
                 {
                     "name": "",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "GameplayLongAttack",
-                    "chainWithPrevious": false,
-                    "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
-                },
-                {
-                    "name": "",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "GameplayCrouch",
-                    "chainWithPrevious": false,
-                    "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
-                },
-                {
-                    "name": "",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "GameplayCrouchRelease",
-                    "chainWithPrevious": false,
-                    "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
-                },
-                {
-                    "name": "",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "GameplayRotation",
-                    "chainWithPrevious": false,
-                    "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
-                },
-                {
-                    "name": "",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "GameplayTarget",
-                    "chainWithPrevious": false,
-                    "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
-                },
-                {
-                    "name": "",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "GameplayMoveCamera",
+                    "groups": ";Controller",
+                    "action": "GameplayCameraMoveRelease",
                     "chainWithPrevious": false,
                     "isComposite": false,
                     "isPartOfComposite": false,
