@@ -1,27 +1,30 @@
 ﻿using UnityEngine;
 using GameStateHub.GameActions;
 
-namespace PlayerInputStore
+namespace GameStateHub
 {
-
-    // dispatch actions
-    public class Store
+    namespace PlayerInputStore
     {
-        // responsibilities:
-        //   - set default state of player controllers
-        //   - represent current state of player controllers
-        //   - lock / release action input (a 'mutex' of sorts)
-        //   - set playerInput action maps (unified input for all players)
-        //   - provide a stateful, serializable object for our ECS to consume
-        // 
-        // we do this through actions!
-        //
-        // sendAction();
-        // getStoreState();
 
-        public void SendAction<T>(Action<T> action)
+        // dispatch actions
+        public class Store
         {
-            Debug.Log(action.flag);
+            // responsibilities:
+            //   - set default state of player controllers
+            //   - represent current state of player controllers
+            //   - lock / release action input (a 'mutex' of sorts)
+            //   - set playerInput action maps (unified input for all players)
+            //   - provide a stateful, serializable object for our ECS to consume
+            // 
+            // we do this through actions!
+            //
+            // sendAction();
+            // getStoreState();
+
+            public void SendAction<T>(Action<T> action)
+            {
+                Debug.Log(action.flag);
+            }
         }
     }
 }
