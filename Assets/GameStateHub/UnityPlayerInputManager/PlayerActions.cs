@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/InputManagement/PlayerInputManager/PlayerActions.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/GameStateHub/UnityPlayerInputManager/PlayerActions.inputactions'
 
 using System;
 using UnityEngine;

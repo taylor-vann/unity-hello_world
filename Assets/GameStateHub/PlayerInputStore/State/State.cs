@@ -2,10 +2,17 @@
 {
     // bunch of composers
 
-    // playerInputComposer
-    // --> references to 
+    // devicesComposer
+    // --> references to controller abstractions
+    // --> not able to reference, not serializable
 
     // playerActionComposer
+    // --? most recent action?
+    // --> references to controller state
+
+    // GetState() -> returns COPY of state (important)
+
+
 
     // list of PlayerInputs
 

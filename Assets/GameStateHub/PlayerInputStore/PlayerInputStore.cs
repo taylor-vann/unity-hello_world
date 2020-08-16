@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using GameActions;
+using GameStateHub.GameActions;
 
 namespace PlayerInputStore
 {

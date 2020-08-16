@@ -1,21 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.Experimental.Input.Plugins.PlayerInput;
 
-using PlayerInputStore;
+using GameStateHub.GameActions;
+using GameStateHub.GameStores;
 using PlayerInputStore.Actions;
-using GameActions;
 
 public class PlayerInputManagerHooks : MonoBehaviour
 {
-    public Store store;
 
+    public Stores stores;
 
     private void Awake()
     {
         // Persist PlayerInputManager && PlayerInputManagerHooks between scenes
         DontDestroyOnLoad(this);
 
-        this.store = new Store();
+        this.stores = new Stores();
     }
 
     // Base
@@ -32,7 +32,7 @@ public class PlayerInputManagerHooks : MonoBehaviour
                 isFocused
             );
 
-            this.store.SendAction(action);
+            this.stores.SendAction(action);
             return;
         }
 
@@ -42,7 +42,7 @@ public class PlayerInputManagerHooks : MonoBehaviour
             isFocused
         );
 
-        this.store.SendAction(action);
+        this.stores.SendAction(action);
     }
 
     // Players
@@ -55,7 +55,7 @@ public class PlayerInputManagerHooks : MonoBehaviour
             playerInput
         );
 
-        this.store.SendAction(action);
+        this.stores.SendAction(action);
     }
 
     void OnPlayerLeft(PlayerInput playerInput)
@@ -66,6 +66,6 @@ public class PlayerInputManagerHooks : MonoBehaviour
             playerInput
         );
 
-        this.store.SendAction(action);
+        this.stores.SendAction(action);
     }
 }
