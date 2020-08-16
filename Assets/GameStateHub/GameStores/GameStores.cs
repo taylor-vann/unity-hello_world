@@ -1,37 +1,37 @@
 ﻿using UnityEngine;
 using GameStateHub.GameActions;
 
-using PStore = PlayerInputStore.Store;
 
 namespace GameStateHub
 {
     namespace GameStores
     {
-        public class StoreContianer
-        {
-            public readonly PStore playerInputStore = new PStore();
-        }
 
         public class Stores
         {
-            private StoreContianer stores;
+            private StoreContianer storeContainer;
 
             public Stores()
             {
-                this.stores = new StoreContianer();
+                this.storeContainer = new StoreContianer();
             }
 
             public void SendAction<T>(Action<T> action)
             {
                 // send to all stores
                 Debug.Log(action.flag);
-                this.stores.playerInputStore.SendAction<T>(action);
+                this.storeContainer.SendAction<T>(action);
             }
 
             public void SendActionToPlayerInputStore<T>(Action<T> action)
             {
                 Debug.Log(action.flag);
-                this.stores.playerInputStore.SendAction<T>(action);
+                this.storeContainer.playerInputStore.SendAction<T>(action);
+            }
+
+            public void GetState()
+            {
+                // return object that's a COPY of all states
             }
         }
     }
