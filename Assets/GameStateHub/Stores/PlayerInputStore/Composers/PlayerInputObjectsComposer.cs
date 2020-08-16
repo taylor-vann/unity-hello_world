@@ -15,7 +15,12 @@ namespace PlayerInputStore
         // classes that take in an action and return a new object for statefullness
         public class PlayerInputObjectsComposer : Composer<PlayerInputObjectsState>
         {
-            public void ConsumeAction<T>(Action<T> action)
+            public override void ReadAction<U>(Action<U> action)
+            {
+
+            }
+
+            public override PlayerInputObjectsState GetState()
             {
 
             }
