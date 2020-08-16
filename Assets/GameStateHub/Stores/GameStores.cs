@@ -6,27 +6,25 @@ namespace GameStateHub
 {
     namespace GameStores
     {
-
         public class Stores
         {
-            private StoreContianer storeContainer;
+            private StoresContianer storesContainer;
+
 
             public Stores()
             {
-                this.storeContainer = new StoreContianer();
+                this.storesContainer = new StoresContianer();
             }
 
             public void SendAction<T>(Action<T> action)
             {
                 // send to all stores
-                Debug.Log(action.flag);
-                this.storeContainer.SendAction<T>(action);
+                this.storesContainer.SendAction<T>(action);
             }
 
             public void SendActionToPlayerInputStore<T>(Action<T> action)
             {
-                Debug.Log(action.flag);
-                this.storeContainer.playerInputStore.SendAction<T>(action);
+                 this.storesContainer.playerInputStore.SendAction<T>(action);
             }
 
             public void GetState()
