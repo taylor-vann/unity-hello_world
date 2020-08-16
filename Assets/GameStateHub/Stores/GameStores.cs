@@ -13,18 +13,18 @@ namespace GameStateHub
 
             public Stores()
             {
-                this.storesContainer = new StoresContianer();
+                this.stores = new StoresContianer();
             }
 
             public void SendAction<T>(Action<T> action)
             {
                 // send to all stores
-                this.storesContainer.SendAction<T>(action);
+                this.stores.SendAction<T>(action);
             }
 
             public void SendActionToPlayerInputStore<T>(Action<T> action)
             {
-                 this.storesContainer.playerInputStore.SendAction<T>(action);
+                 this.stores.playerInputStore.SendAction<T>(action);
             }
 
             public void GetState()

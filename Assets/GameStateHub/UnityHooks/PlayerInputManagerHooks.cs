@@ -15,7 +15,7 @@ public class PlayerInputManagerHooks : MonoBehaviour
         // Persist PlayerInputManager && PlayerInputManagerHooks between scenes
         DontDestroyOnLoad(this);
 
-        this.stores = new Stores();
+        this.storesContainer = new Stores();
     }
 
     // Base
@@ -32,7 +32,7 @@ public class PlayerInputManagerHooks : MonoBehaviour
                 isFocused
             );
 
-            this.stores.SendAction(action);
+            this.storesContainer.SendAction(action);
             return;
         }
 
@@ -42,7 +42,7 @@ public class PlayerInputManagerHooks : MonoBehaviour
             isFocused
         );
 
-        this.stores.SendAction(action);
+        this.storesContainer.SendAction(action);
     }
 
     // Players
@@ -55,7 +55,7 @@ public class PlayerInputManagerHooks : MonoBehaviour
             playerInput
         );
 
-        this.stores.SendAction(action);
+        this.storesContainer.SendAction(action);
     }
 
     void OnPlayerLeft(PlayerInput playerInput)
@@ -66,6 +66,6 @@ public class PlayerInputManagerHooks : MonoBehaviour
             playerInput
         );
 
-        this.stores.SendAction(action);
+        this.storesContainer.SendAction(action);
     }
 }
